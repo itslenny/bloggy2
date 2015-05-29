@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-sm-8">
+    <h2>{{post.title}}</h2>
+    <p>{{post.body}}</p>
+    <hr>
+    <h3>Comments</h3>
+    <div ng-if="!currentUser">Log in to post a comment.</div>
+    <form ng-show="currentUser" class="form" ng-submit="addComment()">
+      <div class="form-group">
+        <textarea class="form-control" ng-model="commentText"></textarea>
+      </div>
+      <input type="submit" value="Add Comment" class="btn btn-primary">
+    </form>
+    <hr>
+    <ul ng-if="post.comments">
+      <li ng-repeat="comment in post.comments">
+        <em>{{comment.createdAt | date: 'short' }}</em><br>
+        {{comment.body}}
+      </li>
+    </ul>
+    <div ng-if="!post.comments || post.comments.length < 1">
+      There are no comments.
+    </div>
+  </div>
+</div>

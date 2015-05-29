@@ -1,0 +1,29 @@
+#loader{
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  background: yellow;
+  color: black;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -100px;
+  text-align: center;
+  z-index: 999;
+}
+
+
+.chat-window .chat-list{
+  list-style: none;
+  height: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.chat-window .chat-list li{
+  list-style: none;
+}
+
+.chat-window .chat-list li:nth-child(even){
+  background: #DDDDDD;
+}
